@@ -1,0 +1,498 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="queryCoVid19old" xml:space="preserve">
+    <value>SELECT 	CONVERT(CHAR(10),incid.NumIncidente)  'Numero Incid.',
+		incidpac.NomPaciente 'Afiliado',
+		ISNULL(instantecambioclasif.instante,llam.Instante) 'Instante Clasif',
+		ISNULL(estados.DesEstado, 'En Despacho') 'Ultimo Evento',
+		CONVERT(CHAR(11),ISNULL(asigincid.Instante,llam.Instante),108) 'Instante Evento',
+		ISNULL(instantedesp.Instante,llam.Instante) 'Instante Recepcion',
+		DATEDIFF(mi, ISNULL(instantedesp.Instante,llam.Instante) , CURRENT_TIMESTAMP) 'Tiempo Transc.',
+		clasif.CodClasifIncidente 'Codigo',
+		ISNULL(CONVERT(CHAR(11),incidcronoevaluado.Instante,108), 'No') 'Evaluado'
+	FROM [RyD].[dbo].[Incidentes]  incid
+		INNER JOIN [RyD].[dbo].[IncidenteLlamado] incidllam
+			ON incidllam.PunIncidente = incid.PunIncidente 
+		INNER JOIN [RyD].[dbo].[Llamados] llam
+			ON llam.PunLlamado = incidllam.PunLlamado AND llam.PunTipoLlamado = 1
+		INNER JOIN [RyD].[dbo].[IncidClasifIncidClaseRecurso] incidclasrec
+			ON incidclasrec.PunIncidente = incid.PunIncidente
+		INNER JOIN [RyD].[dbo].[ClasifsIncidente] clasif
+			ON clasif.PunClasifIncidente = incidclasrec.PunClasifIncidente
+		LEFT JOIN [RyD].[dbo].[IncidentePaciente] incidpac
+			ON incidpac.PunIncidente = incid.PunIncidente
+		LEFT JOIN [RyD].[dbo].[IncidentesCerrados] incidcerr
+			ON incidcerr.PunIncidente = incid.PunIncidente
+		LEFT JOIN (
+				SELECT	Max(PunEstado) Estado,
+						Max(Instante) Instante,
+						PunIncidente,
+						asigest.PunAsignacion,
+						Max(recursos.DesRecurso) Recurso
+				FROM [RyD].[dbo].[AsignacionEstado]  asigest
+					INNER JOIN [RyD].[dbo].[AsignacionUltima] asigult
+						ON asigest.PunAsignacion = asigult.PunAsignacion
+					INNER JOIN [RyD].[dbo].[Asignaciones] asig
+						ON asigest.PunAsignacion = asig.PunAsignacion
+					INNER JOIN [RyD].[dbo].[Recursos] recursos
+						ON recursos.PunRecurso = asig.PunRecurso
+				GROUP BY asigest.PunAsignacion, PunIncidente
+			) asigincid
+			ON asigincid.PunIncidente = incid.PunIncidente
+		LEFT JOIN (
+				SELECT 	PunIncidente, 
+						MIN(InstanteInicio) Instante
+				FROM IncidenteMovimientos
+					INNER JOIN MovimientosIniciados
+						ON MovimientosIniciados.NumInicio = IncidenteMovimientos.NumInicio
+				WHERE (CodMovimiento = 'RecAuMod3      ' OR CodMovimiento = 'RecAuDes3      ')
+				GROUP BY PunIncidente
+			) instantedesp
+			ON instantedesp.PunIncidente = incid.PunIncidente
+		LEFT JOIN [RyD].[dbo].[IncidentesCancelados] cancel
+			ON cancel.PunIncidente = incid.PunIncidente
+		LEFT JOIN [RyD].[dbo].[hcEstados] estados
+			ON estados.PunEstado = asigincid.Estado
+		LEFT JOIN 
+			(
+				SELECT 	PunIncidente, 
+						MAX(InstanteAlta) Instante
+				FROM [RyD].[dbo].[IncidenteObservacionesCronologicas]
+				WHERE PunClaseObservacion = 24
+				GROUP BY PunIncidente
+			) incidcronoevaluar
+			ON incidcronoevaluar.PunIncidente = incid.PunIncidente
+		LEFT JOIN 
+			(
+				SELECT 	PunIncidente, 
+						MAX(InstanteAlta) Instante
+				FROM [RyD].[dbo].[IncidenteObservacionesCronologicas]
+				WHERE PunClaseObservacion = 25
+				GROUP BY PunIncidente
+			) incidcronoevaluado
+			ON incidcronoevaluado.PunIncidente = incid.PunIncidente
+		LEFT JOIN
+			(
+				SELECT 	clasifmod.NumIncidente, 
+						MAX( mov.InstanteInicio) Instante
+				FROM (
+						SELECT 	NumIncidente, 
+								NumInicio 
+						FROM [RyD].[dbo].[mIncidenteCalificacionGeoportalMOD] 
+					UNION
+						SELECT 	NumIncidente, 
+								NumInicio
+						FROM [RyD].[dbo].[mIncidenteCalificacionMOD]
+					) clasifmod
+					INNER JOIN [RyD].[dbo].[MovimientosIniciados] mov
+						ON clasifmod.NumInicio = mov.NumInicio
+					GROUP BY NumIncidente
+			) instantecambioclasif
+				ON instantecambioclasif.NumIncidente = incid.NumIncidente
+	WHERE (Estado &lt; 500 OR Estado IS NULL OR Estado = 1000) 
+		AND cancel.PunIncidente IS NULL 
+		AND incidcerr.PunIncidente IS NULL
+		AND incidclasrec.PunClasifIncidente = 18
+	ORDER BY clasif.PunAgrupacionClasifsIncidente DESC, llam.Instante ASC</value>
+  </data>
+  <data name="RyDConn" xml:space="preserve">
+    <value>Server=10.5.20.67;Database=RyD;User Id=UsrExtraccion;Password=Fw98ty72;</value>
+  </data>
+  <data name="queryCoVid19_old2" xml:space="preserve">
+    <value>SELECT TOP (1000) 
+	                                       CONVERT(CHAR(10),incid.NumIncidente)  'Numero Incid.'
+	                                      , incidpac.NomPaciente 'Afiliado'
+                                          /*, CONVERT(CHAR(11),llam.Instante,108) 'Instante Llamado'*/
+                                          , ISNULL(instantecambioclasif.instante,llam.Instante) 'Instante Clasif'
+	                                      , ISNULL(estados.DesEstado, 'En Despacho') 'Ultimo Evento'
+                                          , CONVERT(CHAR(11),ISNULL(asigincid.Instante,llam.Instante),108) 'Instante Evento'
+	                                     /* , DATEDIFF(mi,  ISNULL(asigincid.Instante,llam.Instante), CURRENT_TIMESTAMP) 'Tiempo Transc. Evento'*/
+                                          , ISNULL(instantedesp.Instante,llam.Instante) 'Instante Recepcion'
+	                                      , DATEDIFF(mi, ISNULL(instantedesp.Instante,llam.Instante) , CURRENT_TIMESTAMP) 'Tiempo Transc.'
+										  , CASE WHEN Estado = 1000 THEN 'Sin Asig.' ELSE ISNULL(asigincid.Recurso,'Sin Asig.') END 'Recurso'
+										  , clasif.CodClasifIncidente 'Codigo'
+										  ,  ISNULL(CONVERT(CHAR(11),incidcronoevaluado.Instante,108), 'No') 'Evaluado'
+                                      FROM [RyD].[dbo].[Incidentes]  incid
+	                                    INNER JOIN [RyD].[dbo].[IncidenteLlamado] incidllam
+		                                    ON incidllam.PunIncidente = incid.PunIncidente 
+                                        INNER JOIN [RyD].[dbo].[Llamados] llam
+		                                    ON llam.PunLlamado = incidllam.PunLlamado AND llam.PunTipoLlamado = 1
+	                                    INNER JOIN [RyD].[dbo].[IncidClasifIncidClaseRecurso] incidclasrec
+		                                    ON incidclasrec.PunIncidente = incid.PunIncidente
+	                                    INNER JOIN [RyD].[dbo].[ClasifsIncidente] clasif
+		                                    ON clasif.PunClasifIncidente = incidclasrec.PunClasifIncidente
+	                                    LEFT JOIN [RyD].[dbo].[IncidentePaciente] incidpac
+		                                    ON incidpac.PunIncidente = incid.PunIncidente
+	                                    LEFT JOIN [RyD].[dbo].[IncidentesCerrados] incidcerr
+		                                    ON incidcerr.PunIncidente = incid.PunIncidente
+	                                    LEFT JOIN (
+				                                    SELECT  
+					                                      Max(PunEstado) Estado
+					                                      , Max(Instante) Instante
+					                                      , PunIncidente
+					                                      , asigest.PunAsignacion
+                                    					  , Max(recursos.DesRecurso) Recurso
+				                                      FROM [RyD].[dbo].[AsignacionEstado]  asigest
+					                                    INNER JOIN [RyD].[dbo].[AsignacionUltima] asigult
+						                                    ON asigest.PunAsignacion = asigult.PunAsignacion
+					                                    INNER JOIN [RyD].[dbo].[Asignaciones] asig
+						                                    ON asigest.PunAsignacion = asig.PunAsignacion
+					                                    INNER JOIN [RyD].[dbo].[Recursos] recursos
+						                                    ON recursos.PunRecurso = asig.PunRecurso
+				                                      GROUP BY asigest.PunAsignacion, PunIncidente
+				                                    ) asigincid
+		                                    ON asigincid.PunIncidente = incid.PunIncidente
+
+	                                    LEFT JOIN (
+                                                    SELECT PunIncidente, MIN(InstanteInicio) Instante
+                                                      FROM IncidenteMovimientos
+		                                                    INNER JOIN MovimientosIniciados
+			                                                    ON MovimientosIniciados.NumInicio = IncidenteMovimientos.NumInicio
+                                                      WHERE (CodMovimiento = 'RecAuMod3      ' OR CodMovimiento = 'RecAuDes3      ')
+                                                      GROUP BY PunIncidente
+				                                    ) instantedesp
+		                                    ON instantedesp.PunIncidente = incid.PunIncidente
+
+	                                    LEFT JOIN [RyD].[dbo].[IncidentesCancelados] cancel
+		                                    ON cancel.PunIncidente = incid.PunIncidente
+	                                    LEFT JOIN [RyD].[dbo].[hcEstados] estados
+		                                    ON estados.PunEstado = asigincid.Estado
+	                                    LEFT JOIN 
+		                                    (SELECT PunIncidente, MAX(InstanteAlta) Instante
+			                                    FROM [RyD].[dbo].[IncidenteObservacionesCronologicas]
+			                                    WHERE PunClaseObservacion = 24
+			                                    GROUP BY PunIncidente
+		                                    ) incidcronoevaluar
+		                                    ON incidcronoevaluar.PunIncidente = incid.PunIncidente
+	                                    LEFT JOIN 
+		                                    (SELECT PunIncidente, MAX(InstanteAlta) Instante
+			                                    FROM [RyD].[dbo].[IncidenteObservacionesCronologicas]
+			                                    WHERE PunClaseObservacion = 25
+			                                    GROUP BY PunIncidente
+		                                    ) incidcronoevaluado
+		                                    ON incidcronoevaluado.PunIncidente = incid.PunIncidente
+	                                    LEFT JOIN
+		                                    (SELECT clasifmod.NumIncidente, MAX( mov.InstanteInicio) Instante
+		                                    FROM (SELECT NumIncidente, NumInicio
+				                                    FROM  [RyD].[dbo].[mIncidenteCalificacionGeoportalMOD] 
+			                                    UNION
+			                                    SELECT NumIncidente, NumInicio
+				                                    FROM [RyD].[dbo].[mIncidenteCalificacionMOD]) clasifmod
+		                                    INNER JOIN [RyD].[dbo].[MovimientosIniciados] mov
+			                                    ON clasifmod.NumInicio = mov.NumInicio
+		                                    GROUP BY NumIncidente) instantecambioclasif
+		                                    ON instantecambioclasif.NumIncidente = incid.NumIncidente
+		                                WHERE (Estado &lt; 500 OR Estado IS NULL OR Estado = 1000) AND cancel.PunIncidente IS NULL AND incidcerr.PunIncidente IS NULL
+			                               AND (   clasif.CodClasifIncidente LIKE 'Verde'
+                                            		OR (incidcronoevaluar.Instante IS NOT NULL AND incidcronoevaluado.Instante IS NULL)
+			                                        OR (incidcronoevaluar.Instante &gt; incidcronoevaluado.Instante)
+                                                )
+                                      ORDER BY 6 ASC, llam.Instante ASC</value>
+  </data>
+  <data name="queryServicios_OLD" xml:space="preserve">
+    <value>SELECT TOP (500) 
+	                                       CONVERT(CHAR(10),incid.NumIncidente)  'Numero Incid.'
+	                                      , incidpac.NomPaciente 'Afiliado'
+                                          , CONVERT(CHAR(11),ISNULL(inciddesp.InstantePasoDespacho, llam.Instante),108) 'H.Recibido'
+	                                      , DATEDIFF(mi, ISNULL(inciddesp.InstantePasoDespacho, llam.Instante), CURRENT_TIMESTAMP) 'Tiempo Transc.'
+										  ,  ISNULL(CONVERT(CHAR(11),incidcronoevaluado.Instante,108), 'No') 'Evaluado'
+                                      FROM [RyD].[dbo].[Incidentes]  incid
+	                                    INNER JOIN [RyD].[dbo].[IncidenteLlamado] incidllam
+		                                    ON incidllam.PunIncidente = incid.PunIncidente 
+                                        INNER JOIN [RyD].[dbo].[Llamados] llam
+		                                    ON llam.PunLlamado = incidllam.PunLlamado AND llam.PunTipoLlamado = 1
+	                                    INNER JOIN [RyD].[dbo].[IncidClasifIncidClaseRecurso] incidclasrec
+		                                    ON incidclasrec.PunIncidente = incid.PunIncidente
+	                                    INNER JOIN [RyD].[dbo].[ClasifsIncidente] clasif
+		                                    ON clasif.PunClasifIncidente = incidclasrec.PunClasifIncidente
+										INNER JOIN [RyD].[dbo].[IncidentePasoDespacho] inciddesp
+											ON inciddesp.PunIncidente = incid.PunIncidente
+	                                    LEFT JOIN [RyD].[dbo].[IncidentePaciente] incidpac
+		                                    ON incidpac.PunIncidente = incid.PunIncidente
+	                                    LEFT JOIN [RyD].[dbo].[IncidentesCerrados] incidcerr
+		                                    ON incidcerr.PunIncidente = incid.PunIncidente
+	                                    LEFT JOIN [RyD].[dbo].[IncidentesCancelados] cancel
+		                                    ON cancel.PunIncidente = incid.PunIncidente
+	                                    LEFT JOIN 
+		                                    (SELECT PunIncidente, MAX(InstanteAlta) Instante
+			                                    FROM [RyD].[dbo].[IncidenteObservacionesCronologicas]
+			                                    WHERE PunClaseObservacion = 24
+			                                    GROUP BY PunIncidente
+		                                    ) incidcronoevaluar
+		                                    ON incidcronoevaluar.PunIncidente = incid.PunIncidente
+	                                    LEFT JOIN 
+		                                    (SELECT PunIncidente, MAX(InstanteAlta) Instante
+			                                    FROM [RyD].[dbo].[IncidenteObservacionesCronologicas]
+			                                    WHERE PunClaseObservacion = 25
+			                                    GROUP BY PunIncidente
+		                                    ) incidcronoevaluado
+		                                    ON incidcronoevaluado.PunIncidente = incid.PunIncidente
+										LEFT JOIN 
+										
+										(
+				                                    SELECT  
+					                                      Max(PunEstado) Estado
+					                                      , PunIncidente
+														  , asigest.PunAsignacion
+				                                      FROM [RyD].[dbo].[AsignacionEstado]  asigest
+					                                    INNER JOIN [RyD].[dbo].[AsignacionUltima] asigult
+						                                    ON asigest.PunAsignacion = asigult.PunAsignacion
+					                                    INNER JOIN [RyD].[dbo].[Asignaciones] asig
+						                                    ON asigest.PunAsignacion = asig.PunAsignacion
+														WHERE asig.PunAsignacion IS NOT NULL
+				                                      GROUP BY asigest.PunAsignacion, PunIncidente
+				                                    ) asigincid
+		                                    ON asigincid.PunIncidente = incid.PunIncidente
+										LEFT JOIN Asignaciones asig
+											ON asig.PunIncidente = incid.PunIncidente
+										LEFT JOIN AsignacionUltima asigult
+											ON asigult.PunAsignacion = asig.PunAsignacion
+		                                WHERE 
+
+										(Estado &lt;= 300 )
+																		AND asig.PunAsignacion = asigincid.PunAsignacion
+										AND asig.PunAsignacion IS NOT NULL
+										AND cancel.PunIncidente IS NULL AND incidcerr.PunIncidente IS NULL
+			                               AND (   clasif.CodClasifIncidente LIKE 'Amarillo'                                             		AND (incidcronoevaluado.Instante IS NULL)
+ /*
+                                            		OR (incidcronoevaluar.Instante IS NOT NULL AND incidcronoevaluado.Instante IS NULL)
+			                                        OR (incidcronoevaluar.Instante &gt; incidcronoevaluado.Instante)*/
+                                                )
+                                      ORDER BY 4 DESC</value>
+  </data>
+  <data name="Verdes_OLD" xml:space="preserve">
+    <value>SELECT TOP (500) 
+	                                       CONVERT(CHAR(10),incid.NumIncidente)  'Numero Incid.'
+	                                      , incidpac.NomPaciente 'Afiliado'
+                                          , CONVERT(CHAR(11),ISNULL(inciddesp.InstantePasoDespacho, llam.Instante),108) 'H.Recibido'
+	                                      , DATEDIFF(mi, ISNULL(inciddesp.InstantePasoDespacho, llam.Instante), CURRENT_TIMESTAMP) 'Tiempo Transc.'
+										  ,  ISNULL(CONVERT(CHAR(11),incidcronoevaluado.Instante,108), 'No') 'Evaluado'
+                                      FROM [RyD].[dbo].[Incidentes]  incid
+	                                    INNER JOIN [RyD].[dbo].[IncidenteLlamado] incidllam
+		                                    ON incidllam.PunIncidente = incid.PunIncidente 
+                                        INNER JOIN [RyD].[dbo].[Llamados] llam
+		                                    ON llam.PunLlamado = incidllam.PunLlamado AND llam.PunTipoLlamado = 1
+	                                    INNER JOIN [RyD].[dbo].[IncidClasifIncidClaseRecurso] incidclasrec
+		                                    ON incidclasrec.PunIncidente = incid.PunIncidente
+	                                    INNER JOIN [RyD].[dbo].[ClasifsIncidente] clasif
+		                                    ON clasif.PunClasifIncidente = incidclasrec.PunClasifIncidente
+										INNER JOIN [RyD].[dbo].[IncidentePasoDespacho] inciddesp
+											ON inciddesp.PunIncidente = incid.PunIncidente
+	                                    LEFT JOIN [RyD].[dbo].[IncidentePaciente] incidpac
+		                                    ON incidpac.PunIncidente = incid.PunIncidente
+	                                    LEFT JOIN [RyD].[dbo].[IncidentesCerrados] incidcerr
+		                                    ON incidcerr.PunIncidente = incid.PunIncidente
+	                                    LEFT JOIN [RyD].[dbo].[IncidentesCancelados] cancel
+		                                    ON cancel.PunIncidente = incid.PunIncidente
+	                                    LEFT JOIN 
+		                                    (SELECT PunIncidente, MAX(InstanteAlta) Instante
+			                                    FROM [RyD].[dbo].[IncidenteObservacionesCronologicas]
+			                                    WHERE PunClaseObservacion = 24
+			                                    GROUP BY PunIncidente
+		                                    ) incidcronoevaluar
+		                                    ON incidcronoevaluar.PunIncidente = incid.PunIncidente
+	                                    LEFT JOIN 
+		                                    (SELECT PunIncidente, MAX(InstanteAlta) Instante
+			                                    FROM [RyD].[dbo].[IncidenteObservacionesCronologicas]
+			                                    WHERE PunClaseObservacion = 25
+			                                    GROUP BY PunIncidente
+		                                    ) incidcronoevaluado
+		                                    ON incidcronoevaluado.PunIncidente = incid.PunIncidente
+										LEFT JOIN (
+				                                    SELECT  
+					                                      Max(PunEstado) Estado
+					                                      , PunIncidente
+				                                      FROM [RyD].[dbo].[AsignacionEstado]  asigest
+					                                    INNER JOIN [RyD].[dbo].[AsignacionUltima] asigult
+						                                    ON asigest.PunAsignacion = asigult.PunAsignacion
+					                                    INNER JOIN [RyD].[dbo].[Asignaciones] asig
+						                                    ON asigest.PunAsignacion = asig.PunAsignacion
+				                                      GROUP BY asigest.PunAsignacion, PunIncidente
+				                                    ) asigincid
+		                                    ON asigincid.PunIncidente = incid.PunIncidente
+		                                WHERE 
+										(Estado &lt;= 300 OR Estado IS NULL OR Estado = 1000) 
+
+										AND cancel.PunIncidente IS NULL AND incidcerr.PunIncidente IS NULL
+			                               AND (   clasif.CodClasifIncidente LIKE 'Amarillo'
+                                            		OR (incidcronoevaluar.Instante IS NOT NULL AND incidcronoevaluado.Instante IS NULL)
+			                                        OR (incidcronoevaluar.Instante &gt; incidcronoevaluado.Instante)
+                                                )
+                                      ORDER BY 4 DESC</value>
+  </data>
+  <data name="queryServicios" xml:space="preserve">
+    <value>SELECT 
+	CONVERT(CHAR(10),incidpend.NumIncidente)  'Numero Incid.'
+	, incidpend.NomPaciente 'Afiliado'
+    , CONVERT(CHAR(11),incidpend.InstanteRecepcion,108) 'H.Recibido'
+	, DATEDIFF(mi, incidpend.InstanteRecepcion, CURRENT_TIMESTAMP) 'Tiempo Transc.'
+	,  ISNULL(CONVERT(CHAR(11),incidcronoevaluado.Instante,108), 'No') 'Evaluado'
+	FROM IncidentesPendientes incidpend
+		LEFT JOIN 
+		(SELECT PunIncidente, MAX(InstanteAlta) Instante
+			FROM [RyD].[dbo].[IncidenteObservacionesCronologicas]
+			WHERE PunClaseObservacion = 25
+			GROUP BY PunIncidente
+		) incidcronoevaluado
+		ON incidcronoevaluado.PunIncidente = incidpend.PunIncidente
+	WHERE incidpend.DesClasifIncidente IN ('Amarillo','Amarillo Teleconsulta')
+		AND (incidpend.PunEstadoIncidente &lt;= 300 )</value>
+  </data>
+  <data name="IncidentesContratadosDemorados" xml:space="preserve">
+    <value>SELECT pend.DesRegion 'Region'
+	, pend.NomDivisionAdminPrimaria 'Partido'
+	, TRIM(pend.NumIncidente) 'Nro.Incidente'
+	, ISNULL(CONVERT(VARCHAR,CONVERT(DATETIME,CONVERT(FLOAT,DATEDIFF(SECOND, pend.InstanteRecepcion, CURRENT_TIMESTAMP))/86400),108),'') 'Demora Total'
+	, ISNULL((SELECT TOP 1 DesClasifIncidente FROM ClasifsIncidente INNER JOIN IncidClasifIncidClaseRecurso ON IncidClasifIncidClaseRecurso.PunClasifIncidenteAutomatico = ClasifsIncidente.PunClasifIncidente WHERE IncidClasifIncidClaseRecurso.PunIncidente = pend.PunIncidente),'') 'Clasif.Inicial'
+	, pend.DesClasifIncidente 'Clasificacion'
+	, ISNULL((SELECT TOP 1 CONVERT(VARCHAR,CONVERT(DATETIME,CONVERT(FLOAT,DATEDIFF(SECOND,InstanteUltimoCambioClasif,CURRENT_TIMESTAMP))/86400),108) FROM IncidenteUltimoCambioClasif WHERE PunIncidente = pend.PunIncidente ORDER BY InstanteUltimoCambioClasif DESC),'') 'Tiempo en Clasif.'
+	, pend.EstadoIncidente 'Ultimo Estado'
+	, CONVERT(VARCHAR,CONVERT(DATETIME,CONVERT(FLOAT,DATEDIFF(SECOND, pend.EstadoIncidenteInstante, CURRENT_TIMESTAMP))/86400),108) 'Demora Ult. Estado'
+	, pend.DesRecurso 'Recurso Asignado'
+	, ISNULL((SELECT CONVERT(VARCHAR,CONVERT(DATETIME,CONVERT(FLOAT,DATEDIFF(SECOND,InstanteAsignado.Instante,CURRENT_TIMESTAMP))/86400),108) FROM Asignaciones INNER JOIN AsignacionUltima ON AsignacionUltima.PunAsignacion = Asignaciones.PunAsignacion
+			INNER JOIN AsignacionEstado InstanteAsignado
+				ON InstanteAsignado.PunAsignacion = Asignaciones.PunAsignacion AND InstanteAsignado.PunEstado = 100
+			WHERE Asignaciones.PunIncidente = pend.PunIncidente),'') 'Demora desde Asignacion'
+	, ISNULL((SELECT TOP 1  rec.DesRecurso +  ' ' + CONVERT(VARCHAR,CONVERT(DATETIME,CONVERT(FLOAT,DATEDIFF(SECOND,asignado.Instante,disponible.Instante))/86400),108) 
+				FROM  Asignaciones asig
+			LEFT JOIN AsignacionUltima asigult
+				ON asigult.PunAsignacion = asig.PunAsignacion
+			INNER JOIN Recursos rec
+				ON rec.PunRecurso = asig.PunRecurso
+			INNER JOIN AsignacionEstado asignado
+				ON asignado.PunAsignacion = asig.PunAsignacion AND asignado.PunEstado = 100
+			INNER JOIN AsignacionEstado disponible
+				ON disponible.PunAsignacion = asig.PunAsignacion AND disponible.PunEstado = 1000
+		WHERE asig.PunIncidente = pend.PunIncidente AND asigult.PunAsignacion IS NULL
+		ORDER BY asig.PunAsignacion DESC),'') 'Demora Asig. Anterior'
+	, (SELECT CASE WHEN (COUNT(DISTINCT asig.PunAsignacion) - 1) &gt; 0 THEN CONVERT(CHAR(1),COUNT(DISTINCT asig.PunAsignacion) - 1) + ' Mas' ELSE '' END
+				FROM  Asignaciones asig
+			LEFT JOIN AsignacionUltima asigult
+				ON asigult.PunAsignacion = asig.PunAsignacion
+		WHERE asig.PunIncidente = pend.PunIncidente AND asigult.PunAsignacion IS NULL) 'Mas Asig.'
+	, ISNULL((SELECT TOP 1 CONVERT(CHAR(10),InstanteAlta,105) + ' ' + CONVERT(CHAR(8),InstanteAlta,108) + ' ' + Usuarios.Nombre + ': ' + Observaciones FROM IncidenteObservacionesCronologicas INNER JOIN Usuarios ON Usuarios.PunUsuario = IncidenteObservacionesCronologicas.PunUsuarioAlta WHERE PunIncidente = pend.PunIncidente ORDER BY NumOrden DESC),'') 'Ultima Observacion'
+	FROM RyD.dbo.IncidentesPendientes pend
+	WHERE (pend.CodClasifIncidente LIKE '%Amarillo%' OR pend.CodClasifIncidente LIKE '%Rojo%') AND (pend.CodClasifIncidente NOT LIKE 'Traslado%')
+		AND (pend.PunEstadoIncidente &lt; 500 OR pend.PunEstadoIncidente IS NULL)
+		AND DATEDIFF(MINUTE, pend.InstanteRecepcion, CURRENT_TIMESTAMP) &gt;= (CASE WHEN pend.CodClasifIncidente LIKE '%Rojo%' THEN 30 ELSE 180 END)
+		AND pend.TipoRecurso = 'PrestadorAmb'
+    ORDER BY 1,2 DESC</value>
+  </data>
+</root>
